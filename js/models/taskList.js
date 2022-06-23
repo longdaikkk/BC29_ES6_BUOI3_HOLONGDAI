@@ -19,26 +19,13 @@ export class TaskList{
 
     sapXepTang(){
         this.list = this.list.sort(function(a, b){
-            var nameA=a.tenCV.slice(0,1).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-            var nameB=b.tenCV.slice(0,1).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-            console.log(nameA);
-            if (nameA < nameB)
-             return -1;
-            if (nameA > nameB)
-             return 1;
-            return 0;
-            
+            return a.tenCV.localeCompare(b.tenCV);
            });
     }
 
     sapXepGiam(){
         this.list = this.list.sort(function(a, b){
-            var nameA=a.tenCV.slice(0,1).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''), nameB=b.tenCV.slice(0,1).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-            if (nameA < nameB)
-             return 1;
-            if (nameA > nameB)
-             return -1;
-            return 0;
+            return -a.tenCV.localeCompare(b.tenCV);
            });
     }
 }

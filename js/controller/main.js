@@ -58,6 +58,8 @@ getEle("all").onclick = () =>{
 }
 
 getEle("two").onclick = () =>{
+    const result = taskListNotYet.list.sort((a, b) => a.tenCV.localeCompare(b.tenCV));
+    console.log(result);
     taskListNotYet.sapXepTang();
     taskListNotYet.render(); 
     taskListDone.sapXepTang();
@@ -70,9 +72,3 @@ getEle("three").onclick = () =>{
     taskListDone.sapXepGiam();
     taskListDone.render(); 
 }
-
-const stringa = "Ỉa nhậu";
-const stringb = "ĐI ỉa";
-
-const result = stringa.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-console.log(result);
